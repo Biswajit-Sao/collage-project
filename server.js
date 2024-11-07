@@ -8,11 +8,11 @@ import userRouter from "./routes/userRoute.js";
 import doctorRouter from "./routes/doctorRoute.js";
 
 
-//APP CONFIG
+
 const app=express();
 const port=process.env.PORT || 4000;
 
-//MIDDLEWARES
+
 
 app.use(express.json())
 app.use(cors())
@@ -20,13 +20,13 @@ connectDB()
 connectCloudinary()
 
 
-//API ENDPOINTS
 
-app.use('/api/admin',adminRouter) // [/api/admin/add-doctor]
+
+app.use('/api/admin',adminRouter) 
 
 app.use('/api/doctor',doctorRouter)
 
-app.use('/api/user',userRouter) //[http://localhost:8000/api/user/register]
+app.use('/api/user',userRouter) 
 
 app.get("/",(req,res)=>{
     res.send("hello")
